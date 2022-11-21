@@ -2,6 +2,7 @@ from django.shortcuts import render
 from CRUDOperation.models import DiseaseType
 from django.contrib import messages
 from CRUDOperation.forms import DiseaseTypeforms
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 
 def showDiseaseType(request):
   showall = DiseaseType.objects.all()
@@ -34,5 +35,6 @@ def UpdateDiseaseType(request, diseasetype_id):
 def DelDiseaseType(request, diseasetype_id):
   delDiseaseType = DiseaseType.objects.get(diseasetype_id=diseasetype_id)
   delDiseaseType.delete()
-  showdata = DiseaseType.objects.all()
-  return render(request, 'index.html', {"data": showdata})
+  #showdata = DiseaseType.objects.all()
+  # return render(request, 'index.html', {"data": showdata})
+  return HttpResponseRedirect("/")

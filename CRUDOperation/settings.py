@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-qk5x8%7qa$$q8xomk)3arr57#%1w=z-xs^hx56xi=d=t%vfq0@
 DEBUG = True
 
 ALLOWED_HOSTS = ['hospital007.herokuapp.com']
-
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -77,27 +77,27 @@ WSGI_APPLICATION = 'CRUDOperation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hospital_management',
-        'USER': 'postgres',
-        'PASSWORD': 'ManHero01',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'dbrpoe7khut07l',
-#         'USER': 'vhjniiitgyfbhb',
-#         'PASSWORD': '18e4366f510c91086ab22a6e23968d785f3d2b58d0277017595c37903cdf20e5',
-#         'HOST': 'ec2-54-82-205-3.compute-1.amazonaws.com',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'hospital_management',
+#         'USER': 'postgres',
+#         'PASSWORD': 'ManHero01',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbrpoe7khut07l',
+        'USER': 'vhjniiitgyfbhb',
+        'PASSWORD': '18e4366f510c91086ab22a6e23968d785f3d2b58d0277017595c37903cdf20e5',
+        'HOST': 'ec2-54-82-205-3.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
