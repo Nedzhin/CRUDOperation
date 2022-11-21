@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+  <title> CRUD Operation</title>
+</head>
+
+<body>
+  <center>
+    <h1>How to edit Diseasetype CRUDO operation with django</h1>
+    <h3> Nurseiit project</h3>
+    <hr/>
+    <form method="POST" action="/Update/{{DiseaseType.diseasetype_id}}">
+      {% csrf_token %}
+    
+    <table border="1">
+      <tr>
+        <td>Disease Type ID</td>
+        <td><input type="text" name="diseasetype_id" value="{{DiseaseType.diseasetype_id}}" readonly></td>
+      </tr>
+
+      <tr>
+        <td>Disease Type Description</td>
+        <td><input type="text" name="diseasetype_description" value="{{DiseaseType.diseasetype_description}}"></td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="submit" value="Update Record">
+        </td>
+        <td>{% if messages %}
+          {% for mess in messages %}
+          <b style="color:blue;">{{mess}}</b>
+          {% endfor %}
+          {% endif %}</td>
+      </tr>
+
+    </table>
+    <a href="{% url 'showDiseaseType' %}">Go to home page</a>
+  </form>
+  </center>
+</body>

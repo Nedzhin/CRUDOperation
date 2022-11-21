@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <title> CRUD Operation</title>
+</head>
+
+<body>
+  <center>
+    <h1>How to create CRUDO operation with django</h1>
+    <h3> Nurseiit project</h3>
+    <hr/>
+    <a href="{% url 'InsertDiseaseType' %}">Create New Disease Type</a>
+    <table border="1">
+      <tr>
+          <th>DiseaseType id</th>
+          <th>DiseaseType description</th>
+      </tr>
+      {% for result in data%}
+      <tr>
+        <td>{{result.diseasetype_id}}</td>
+        <td>{{result.diseasetype_description}}</td>
+        <td><a href="edit/{{result.diseasetype_id}}"> Edit</a></td>
+        <td><a href="Delete/{{result.diseasetype_id}}" onclick="return confirmation('Are you sure to delete?')"> Delete </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </center>
+</body>

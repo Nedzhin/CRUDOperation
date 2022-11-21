@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+  <title> CRUD Operation</title>
+</head>
+
+<body>
+  <center>
+    <h1>Insert record into postgresql</h1>
+    <h3> Nurseiit project</h3>
+    <hr/>
+    <form method="POST">
+      {% csrf_token %}
+    <table border="1">
+      <tr>
+        <td>Disease Type id</td>
+        <td><input type="text" placeholder="Enter Disease Type id" name="diseasetype_id"></td>
+      </tr>
+      <tr>
+        <td>Disease Type description</td>
+        <td><input type="text" placeholder="Enter Disease Type description" name="diseasetype_description"></td>
+      </tr>
+
+      <tr>
+        <td><input type="submit" value="Insert"></td>
+        <td>{% if messages %}
+          {% for mess in messages %}
+          <b style="color:blue;">{{mess}}</b>
+          {% endfor %}
+          {% endif %}</td>
+      </tr>
+      
+    </table>
+    <a href="{% url 'showDiseaseType' %}">Home Page</a>
+  </form>
+  </center>
+</body>
